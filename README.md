@@ -2,6 +2,8 @@
 
 ## Overview
 This repository contains a basic Flask application with CRUD functionality for managing courses, teachers, and students. The application allows administrators to create, view, update, and delete teachers and courses, as well as enroll students in courses. 
+##
+![Screenshot 1](static/assets/pagesView.jpg)
 
 ## Features
 - **CRUD Operations**: Administrators can perform CRUD operations on teachers, courses, and students.
