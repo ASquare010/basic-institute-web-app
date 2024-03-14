@@ -1,4 +1,4 @@
-# Flask CRUD Application
+# Flask Institute Web Application
 
 ## Overview
 This repository contains a basic Flask application with CRUD functionality for managing courses, teachers, and students. The application allows administrators to create, view, update, and delete teachers and courses, as well as enroll students in courses. 
