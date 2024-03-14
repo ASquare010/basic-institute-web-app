@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fn</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/background.js') }}" defer></script>
+    <style>
+        
+        .aboutBgImg{
+            background-color: #FDFDFD;
+            color: #464646;
+            height: 100vh;
+            width: 100vw;
+            padding: 0px;
+            margin: 0px;  
+            background-image: url("{{ url_for('static', filename='assets/map.png') }}");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .aboutPages
+        {            
+            display: flex;
+            flex-direction: row;
+            background-image: url("{{ url_for('static', filename='assets/about.png') }}");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%; 
+            height: 100%;  
+            margin: 0px;
+            padding: 0px;    
+
+        }
+
+    </style>
+</head>
+
+    <body class="aboutBgImg">
+        
+        <h1 class=header> Language Training<div class="outlineText">Centre</div> </h1>
+        
+        <div class="navbar">
+            <span class="spacer"></span>
+            <button id="btnHome" class="navButton"><h3>Home</h3></button>
+            <button id="btnCourses" class="navButton" ><h3>Courses</h3></button>
+            <button id="btnAbout" class="navButton active" ><h3>About</h3></button>
+        </div>
+
+        <div class="aboutPages">
+            <div class="rightAbout">
+                <p>
+                    Lorem Ipsum is duof the prgduof the prgduof the prgduof the prgsimply duof the prg and
+                    Lorem Ipsum is simply dummy he printing and
+                    Lorem Ipsum is simply duhe printing and
+                    Lorem Ipsum is <span class="highLight">This dummy</span> text of the printing and
+                    Lorem Ipsum is simply dummng and
+                </p>
+
+                <button id="apply" class="roundedButton" >Apply Now</button>
+            </div>
+            <div class="contact">
+                <div class="number">Phone: +928888888</div>
+                <div class="number">email: example@gmail.com</div>
+                <div class="number">What's App: +9223442555</div>
+            </div>
+            <div class="mapContainer">
+                
+                <div class="number">Location: </div>
+                <img src="{{ url_for('static', filename='assets/googleMapTA.webp') }}" alt="Map">
+    
+            </div>
+        </div>
+
+    </body>
+
+</html>

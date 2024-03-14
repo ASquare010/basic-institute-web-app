@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/apply.js') }}" defer></script>
+</head>
+<body class="applyPage">
+    <form id="registration-form" class="applyPage" action="/submit_student" method="post" enctype="multipart/form-data">
+        <div class="applyCard">
+            <div class="image-container">
+                <h2>Let's Register You</h2>
+                <img id="previewImage"  >
+                <h3>Please add a clear<br>Photo</h3>
+                <input type="file" id="imageInput" name="imageInput" accept=".png" style="display: none;" required>
+                <label for="imageInput" class="addImgButton">+</label>
+                <br>
+                <p>Photo must be of <br>dimensions 1024*1024</p>
+            </div>
+            <div class="form-container">
+                <div class="form-group">
+                    <div class="spacer"></div>
+                    <h2>Let's get to know you</h2>
+                    <div class="spacer"></div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <div class="spacer"></div>
+                    <input type="text" id="name" name="name" required placeholder="your full name">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <div class="spacer"></div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <span >Male</span>
+                    <div class="spacer"></div>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <span  >Female</span>
+                    <div class="spacer"></div>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <div class="spacer"></div>
+                    <!-- <input type="number" id="age" placeholder=18 name="age" required> -->
+                    <input type="date" id="dob" name="dob" required class="styled-date-input">
+
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <div class="spacer"></div>
+                    <input type="tel" id="mobile" name="mobile" placeholder="+92314020245" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <div class="spacer"></div>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentmobile">Parent Mobile:</label>
+                    <div class="spacer"></div>
+                    <input type="tel" id="parentmobile" placeholder="+92314020245" name="parentmobile" required>
+                </div>
+                <div class="form-group">
+                    <div>Course:</div>
+                    <div class="spacer"></div>
+                    <div class="courseBox">
+                        {% for course in studentCourses %}
+                            <a class="courseCard" href="/courses"><span>{{course.name}}</span><div class="spacer"></div><span>-</span></a>
+                        {% endfor %}
+                        <a class="courseCard" href="/courses"><span>Add Course</span><div class="spacer"></div><span>+</span></a>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="form-group">
+                    <div class="spacer"></div>
+                        <button  type="submit" class="roundedButton">Next ></button>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

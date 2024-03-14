@@ -1,0 +1,669 @@
+/* NavBar */
+.navbar {
+  position: absolute;
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+}
+
+.navButton {
+  width: 220px;
+  border: none;
+  background-color: transparent;
+  color: inherit; 
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+.navButton:hover {
+  background-color: #E9A068;
+  color: #FDFDFD; 
+}
+
+.navButton.active {
+  
+  outline: 2px solid #464646; 
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% { outline: 1px solid transparent;  }
+  100% { outline: 2px solid #464646;}
+}
+
+
+/* logo */
+
+.header
+{
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 25px;
+  width: 300px; 
+  height: 100px;  
+  z-index: 3; 
+}
+
+
+.roundedButton {
+  background-color: #FDFDFD; /* Set the background color */
+  border: none; /* Remove border */
+  border-radius: 60px; /* Apply rounded corners */
+  padding: 12px 50px; /* Add padding */
+  font-weight: bold;
+  font-size: 28px;
+  color: #E9A068;
+  cursor: pointer; /* Show pointer cursor on hover */
+  box-shadow: 0 0 2px 2px rgb(19, 19, 19); 
+}
+
+.roundedButton:hover {
+  color: #FDFDFD;
+  background-color: #df9f72; 
+}
+.roundedButton:active {
+  color: #FDFDFD;
+  background-color: #c2804e; 
+}
+.spacer {
+  flex-grow: 1;
+}
+
+.outlineText {
+  color: #FDFDFD; 
+  letter-spacing: 4px;
+  font-weight: bolder;
+  text-shadow: 
+   2px 2px 0 #E9A068,
+  -1px -1px 0 #E9A068,  
+   1px -1px 0 #E9A068,
+  -1px  1px 0 #E9A068,
+   1px  1px 0 #E9A068;
+}
+
+.promenent
+{
+  color: #E9A068;
+}
+
+/* Index Css */
+
+.leftIndex
+{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-grow: 1;
+    max-height: 100vh;
+    
+}
+.rightIndex
+{
+    
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: xx-large;
+    padding-right: 50px;
+    max-width: 40%;
+}
+
+.homePages
+{            
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    height: 100%;  
+    margin: 0px;
+    padding: 0px;    
+
+}
+
+/* Courses Css*/
+
+.pagesCou
+{            
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    height: 100%;  
+    margin: 0px;
+    padding: 0px;    
+
+}
+.leftCou
+{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: #E9A068;
+    width:  30%;
+    max-height: 100vh;
+    box-shadow: inset -30px 0px 30px -30px rgba(0, 0, 0, 0.5);
+}
+.topCou {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: auto; 
+    white-space: nowrap; /* Prevent line breaks */
+}
+.topCou::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.topCou::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+.topCou::-webkit-scrollbar-thumb {
+    background: #464646; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Border radius of the scrollbar thumb */
+}
+
+.topCou::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+.card-container {
+    display: inline-flex; 
+    margin-top: 80px;
+    align-items: center;
+    padding: 10px;
+    margin-left: 70px; 
+    
+}
+
+.card {
+    
+    width: 21vw; 
+    height: 56vh; 
+    margin-right: 60px; 
+    padding: 0px;
+    border-radius: 40px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+    background-image: linear-gradient(45deg, #E9A068, #EDCAB1); 
+    border: none;
+    overflow: hidden; 
+
+}
+.card:hover
+{
+  background-image: linear-gradient(#E9A068, #E9A068); 
+}
+
+.card.active {
+    width: 27vw;
+    height: 68vh;
+    margin-right: 80px; 
+    border-radius: 50px;   
+}
+.layer{ 
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  text-align: start;
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+.layer1{ 
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  color: #fdfdfd;
+  background-image: linear-gradient(#46464600,#3a3a3a3d);
+  box-shadow: inset 0px -80px 80px -80px rgba(0, 0, 0, 0.5); 
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+}
+.courses{
+  padding-left: 35px;
+  padding-bottom: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-weight: bolder;
+  font-size: 80px;
+}
+.test
+{
+  padding-left: 35px;
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.statusCard
+{
+  display: flex;
+  flex-direction: row;
+  padding-left: 35px;
+  align-items: center;
+  font-size:x-large;
+  padding-bottom: 20px;
+}
+.enrolled
+{
+  padding: 12px;
+  background-color: #FDFDFD;
+  color: #E9A068;
+  margin-right: 50px;
+  border-radius: 14px; 
+}
+
+/* About Us */
+
+
+
+.rightAbout
+{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: xx-large;
+    padding-left: 80px;
+    max-width: 40%;
+}
+
+.mapContainer {
+  position: absolute;
+  bottom: 20px;  
+  right: 20px; 
+}
+
+.mapContainer img {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);  
+  max-width: 400px;  
+  height: auto;
+}
+.number {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #FDFDFD;
+  padding: 10px;
+  margin-top: 5px;
+}
+.contact{
+  position: absolute;
+  bottom: 20px;  
+  right: 500px; 
+}
+
+
+
+
+/* deatils */
+
+
+.leftDetail
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background-color: #E9A068;
+    width:  40%;
+    height: 100vh;
+    box-shadow: inset 30px 0px 30px -30px rgba(0, 0, 0, 0.5);
+  }
+.pagesDetail
+{            
+    display: flex;
+    flex-direction: row;
+    align-items:end ;
+    justify-content: end;
+    width: 100%; 
+    height: 100%;  
+    margin: 0px;
+    padding: 0px;    
+
+}
+.teachName
+{
+  position: absolute;
+  top: 20px;
+  right: 7vw;
+  text-align: center;
+  color: #FDFDFD;
+  font-size: 60px;
+}
+.deatilsc
+{
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+  flex-grow: 1;
+  height: 100%;
+}
+.lang
+{
+  color: #E9A068;
+  font-size: 70px;
+}
+.isOnline
+{
+  font-size: x-large;
+  color:#464646;
+  font-weight: lighter;
+}
+
+.container
+{
+  margin-top: 40px;
+  height: 40%;
+  width: 78%;
+  max-width: 950px;
+  border-radius: 40px;
+  padding: 60px;
+  box-shadow: 0px 0px 5px 5px rgba(14, 14, 14, 0.2);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  
+}
+.divider{
+  border-top: 3px solid #464646;
+  width: 100%;
+}
+
+.enroleBtn {
+  background-color: #FDFDFD; /* Set the background color */
+  border: none; /* Remove border */
+  max-width: 250px;
+  border-radius: 60px; /* Apply rounded corners */
+  padding: 12px 50px; /* Add padding */
+  font-weight: bold;
+  margin-top: 60px;
+  font-size: 28px;
+  color: #E9A068;
+  cursor: pointer; /* Show pointer cursor on hover */
+  box-shadow: 0 0 2px 2px rgb(19, 19, 19); 
+}
+
+.enroleBtn:hover {
+  color: #FDFDFD;
+  background-color: #df9f72; 
+}
+.enroleBtn:active {
+  color: #FDFDFD;
+  background-color: #c2804e; 
+}
+
+/* About */
+
+
+.applyPage {        
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #FDFDFD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;    
+}
+
+.applyCard {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 52%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 34%;
+  background-color: #E9A068;
+  box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 20px 0px 0px 20px;
+  text-align: center;
+}
+
+.image-container img {
+  margin-top: 40px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #FDFDFD;
+  box-shadow: inset 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  object-fit: cover; 
+}
+
+.form-container {
+  
+  width: 50%;
+  padding: 20px;
+  padding-left: 55px;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make labels stand out */
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+  width: 65%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+
+}
+
+.form-group input[type="radio"] {
+  margin-right: 5px; /* Spacing for radio buttons */
+  margin-bottom: 7.5px;
+}
+
+.form-group .form-group { /* Nested form-group for checkbox layout */
+  margin-top: 5px;
+}
+
+.form-group .form-group label {
+  display: inline-block;
+  margin-right: 10px; /* Spacing for checkbox labels */
+}
+
+.form-group .form-group span { /* Styling for "Add More" link */
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+
+.roundedButton {
+  background-color: #FDFDFD; /* Set the background color */
+  border: none; /* Remove border */
+  border-radius: 60px; /* Apply rounded corners */
+  padding: 12px 40px; /* Add padding */
+  font-weight: bold;
+  font-size: 20px;
+  color: #E9A068;
+  cursor: pointer; /* Show pointer cursor on hover */
+  box-shadow: 0 0 2px 2px rgb(19, 19, 19); 
+}
+
+.roundedButton:hover {
+  color: #FDFDFD;
+  background-color: #df9f72; 
+}
+.roundedButton:active {
+  color: #FDFDFD;
+  background-color: #c2804e; 
+}
+.addImgButton
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #464646;
+  border: none;
+  color: #fdfdfd;
+  font-size: x-large;
+  cursor: pointer;
+
+}
+.addImgButton:hover
+{
+  background-color: #FDFDFD;
+  color: #464646;
+}
+.courseBox
+{ 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px; /* gap between items */
+  height: 100px;
+  width: 65%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #FDFDFD;
+  overflow: auto; /* Make it scrollable */
+
+}
+.courseBox::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.courseBox::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+.courseBox::-webkit-scrollbar-thumb {
+  background: #464646; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Border radius of the scrollbar thumb */
+}
+
+.courseBox::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+.courseCard
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #464646;
+  padding: 12px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #FDFDFD;
+}
+.courseCard:hover
+{
+  background-color: #E9A068;
+
+}
+
+.styled-date-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 69.5%;
+  background-color: #F9F9F9;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Admin Page */
+
+
+.adminPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  
+}
+.highLight {
+  color: #464646;
+  margin-bottom: 20px ;
+  font-size: 24px;
+}
+.adminForm {
+  margin-bottom: 20px;
+}
+
+.ulist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 40%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  list-style-type: none;
+  padding: 20px;
+}
+.liRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: #464646;
+  padding: 12px;
+  margin-right: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+
+}   
+
+.liRow:hover
+{
+  background-color: lightcoral;
+  color: #FDFDFD;
+}
+.adminCard
+{
+  display: flex;
+  flex-direction: row; 
+  padding: 50px;
+  width: 40%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}

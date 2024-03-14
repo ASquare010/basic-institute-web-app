@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fn</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/background.js') }}"></script>
+    <style>
+        
+        .homeBgImg{
+            background-color: #FDFDFD;
+            color: #464646;
+            height: 100vh;
+            width: 100vw;
+            padding: 0px;
+            margin: 0px;  
+            background-image: url("{{ url_for('static', filename='assets/map.png') }}");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+    </style>
+</head>
+
+    <body class="homeBgImg">
+        
+        <h1 class=header> Language Training<div class="outlineText">Centre</div> </h1>
+        
+        <div class="navbar">
+            <span class="spacer"></span>
+            <button id="btnHome" class="navButton active"><h3>Home</h3></button>
+            <button id="btnCourses" class="navButton" ><h3>Courses</h3></button>
+            <button id="btnAbout" class="navButton" ><h3>About</h3></button>
+        </div>
+
+        <div class="homePages">
+            <div class="leftIndex">
+                <img src="{{ url_for('static', filename='assets/studentStand.png') }}" style="width: 90%; height: auto;">
+            </div>
+            <div class="rightIndex">
+                <p>
+                    Lorem Ipsum is duof the prgduof the prgduof the prgduof the prgsimply duof the prg and
+                    Lorem Ipsum is simply dummy he printing and
+                    Lorem Ipsum is simply duhe printing and
+                    Lorem Ipsum is <span class="promenent">This dummy</span> text of the printing and
+                    Lorem Ipsum is simply dummng and
+                </p>
+
+                <button id="apply" class="roundedButton" >Apply Now</button>
+
+            </div>
+            
+        </div>
+
+    </body>
+
+</html>

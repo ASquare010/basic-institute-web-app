@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fn</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/background.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/jQuery.js') }}" ></script>
+    <style>
+        
+        .bgImgCou{
+            background-color: #FDFDFD;
+            color: #464646;
+            height: 100vh;
+            width: 100vw;
+            padding: 0px;
+            margin: 0px;  
+            background-image: url("{{ url_for('static', filename='assets/map.png') }}");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+    <body class="bgImgCou">
+
+        <div class="pagesDetail">
+            <div class="deatilsc">
+                <h1 class="lang">Learn {{ course.name }}<div class="isOnline">&nbsp;&nbsp;&nbsp;&nbsp;{{ course.location }}</div></h1>
+                <div class="container">
+                    <h1><span style="color: #E9A068;">From Timing</span> &nbsp;&nbsp;&nbsp;<span class="isOnline"> {{ course.timing }}</span></h1>
+                    <hr class="divider">
+                    <div class="isOnline">{{ course.details }}</div>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <h3>Phone: {{ course.teacher.mobile }} <br>Email: {{ course.teacher.email }}</h3>
+                </div> 
+                <button class="enroleBtn"onclick="enroleCourseId('{{ course.id }}')">
+                    {{ "Unenroll" if enroled else "Enroll" }}
+                </button>
+            </div>
+            <div class="leftDetail">
+                <h1 class="teachName">{{ course.teacher.name }}</h1>
+                <img src="{{ url_for('static', filename='assets/' + course.teacher.image) }}" style="width: 90%; height: auto;">
+            </div>
+            
+        </div>
+        <script>
+            var img = "{{ url_for('static', filename='assets/' + course.teacher.image) }}";
+            var layer = document.getElementById('layer'); 
+            layer.style.backgroundImage = "url('" + img + "')";
+
+            function enroleCourseId(courseId)
+            {
+                console.log("Course ID: ", courseId);
+                var form = $('<form action="/enroleCourseId" method="post">' +
+                                '<input type="hidden" name="course_id" value="' + courseId + '">' +
+                            '</form>');
+                
+                $('body').append(form);
+                form.submit();
+
+            }
+
+        </script>
+
+    </body>
+
+</html>

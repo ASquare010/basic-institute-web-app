@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fn</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/background.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/jQuery.js') }}" ></script>
+    <style>
+        
+        .bgImgCou{
+            background-color: #FDFDFD;
+            color: #464646;
+            height: 100vh;
+            width: 100vw;
+            padding: 0px;
+            margin: 0px;  
+            background-image: url("{{ url_for('static', filename='assets/map.png') }}");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+
+    <body class="bgImgCou">
+        
+        <div class="navbar">
+            <span class="spacer"></span>
+            <button id="btnHome" class="navButton "><h3>Home</h3></button>
+            <button id="btnCourses" class="navButton active"><h3>Courses</h3></button>
+            <button id="btnAbout" class="navButton" ><h3>About</h3></button>
+        </div>
+
+        <div class="pagesCou">
+            <div class="leftCou">
+                <h1 style="font-size: 70px; color: #FDFDFD;">Courses</h1>
+            </div>
+            <div class="topCou">
+                <div class="card-container">
+
+                    {% for course in courses %}
+                        
+                        <button id="card-{{ course.id }}" class="card" onclick="logCourseId('{{ course.id }}')">
+                            <div id="layer-{{ course.id }}" class="layer">
+                                <div class="layer1">
+                                    
+                                    <div class="courses">{{ course.name }}</div>
+                    
+                                    {% if course.requiresTest %}
+                                        <div class="test">Requires an entry test <br>for Admission</div>
+                                    {% endif %}
+                                    
+                                    <div class="statusCard">
+                                        <span>{{ course.location }}</span>&nbsp;&nbsp;&nbsp;
+                                        <span id="enrol-{{ course.id }}" class="enrolled" hidden>Enrolled</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    
+                        <!-- JavaScript to set background image -->
+
+                        <script>
+                        
+                        
+                        function logCourseId(courseId)
+                        {
+
+                            console.log("Course ID: ", courseId);
+                            var form = $('<form action="/coursDetail" method="post">' +
+                                            '<input type="hidden" name="course_id" value="' + courseId + '">' +
+                                        '</form>');
+                            
+                            $('body').append(form);
+                            form.submit();
+
+                        }
+
+                        function init()
+                        {
+                            var courseId = "{{ course.id }}";
+                            var img = "{{ url_for('static', filename='assets/' + course.teacher.image) }}";
+                             
+
+                            var layer = document.getElementById('layer-{{ course.id }}'); 
+                            var enrolledSpan = document.getElementById('enrol-{{ course.id }}');
+                            var cardElement = document.getElementById("card-{{ course.id }}");
+
+                            layer.style.backgroundImage = "url('" + img + "')";
+
+                            $.ajax({
+                                url: '/get_selected_data',
+                                type: 'GET',
+                                dataType: 'json',
+                                success: function(data) {
+                                    var selected = data;
+                                    console.log(selected); 
+
+                                    if (selected.includes(courseId.toString()))
+                                    {
+                                        enrolledSpan.hidden = false;
+                                        cardElement.classList.add("active");
+                                    }
+
+                                },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                                    console.error('Error fetching selected data:', errorThrown);
+                                }
+                            });
+
+                        }
+
+                        init()
+                        
+                        </script>
+
+                    {% endfor %}
+                  </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
