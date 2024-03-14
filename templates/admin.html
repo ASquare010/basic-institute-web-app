@@ -91,10 +91,9 @@
     <h1 class="highLight">Students</h1>
     <ul class="ulist" >
         {% for student in students %}
-            <a href="/delete_teacher/{{ teacher.id }}" class="liRow" >
+            <a href="/delete_student/{{ student.id }}" class="liRow" >
                 {{ student.name }} Id {{ student.id }}  &nbsp;&nbsp;&nbsp; -
             </a>
-            <li>{{ student.name }}</li>
         {% endfor %}
     </ul>
 </body>
