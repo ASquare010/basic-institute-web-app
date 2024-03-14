@@ -13,7 +13,7 @@ This repository contains a basic Flask application with CRUD functionality for m
 
 ## Installation
 1. Clone the repository to your local machine:
-2. Install dependencies: in requirments.txt
+2. Install dependencies: in requirements.txt
 
 ## Usage
 1. Start the Flask server:
