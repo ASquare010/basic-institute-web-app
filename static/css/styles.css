@@ -667,3 +667,30 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   overflow: auto;
 }
+.centerText
+{
+  text-align: center;
+}
+.adminLoginbody {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.containerAdminLogin {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formed
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+
