@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Success</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        text-align: center;
+    }
+    .btn {
+        padding: 10px 20px;
+        background-color: #df9f72;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .btn:hover {
+        background-color: #c2804e;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Success</h1>
+    <button class="btn" onclick="goBack()">Registered Successfully! Let's go back</button>
+</div>
+
+<script>
+function goBack() {
+    window.location.href = "/";
+}
+</script>
+</body>
+</html>
